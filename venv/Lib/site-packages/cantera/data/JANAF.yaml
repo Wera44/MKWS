@@ -1,0 +1,37 @@
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gri30
+  thermo: Redlich-Kwong
+  elements: [O, N]
+  species: [N2O]
+  kinetics: gas
+  transport: mixture-averaged
+  state: {T: 300.0, P: 1 atm}
+  reactions: none
+
+species:
+- name: N2O
+  composition: {N: 2, O: 1}
+  thermo:
+    model: NASA9
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.288225970E+04, -6.440118440E+02, 6.034351430E+00, 2.265394436E-04, 3.472782850E-06, -3.627748640E-09, 1.137969552E-12, 1.179405506E+04, -1.003128570E+01]
+    - [3.438448040E+05, -2.404557558E+03, 9.125636220E+00, -5.401667930E-04, 1.315124031E-07, -1.414215100E-11, 6.381066870E-16, 2.198632638E+04, -3.147805016E+01]
+    note: L7/88
+  equation-of-state: 
+    model: Redlich-Kwong
+  critical-parameters:
+    critical-temperature: 309.55 K
+    critical-pressure: 72.45 bar
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 232.4
+    diameter: 3.828
+    rotational-relaxation: 1.0
+    note: '*'
+
+
+
